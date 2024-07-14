@@ -36,5 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-### .properties files ##
-src/main/**/application-db.properties
+## env ##
+.env

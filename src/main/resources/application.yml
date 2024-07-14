@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Muddyteam_back
+
+  profiles:
+    include: db
