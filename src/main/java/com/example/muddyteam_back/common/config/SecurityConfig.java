@@ -56,7 +56,7 @@ public class SecurityConfig {
         //경로별 인가 작업
         http
             .authorizeHttpRequests((auth) -> auth
-                .requestMatchers("/muddy/api/**", "/v3/**").permitAll() //swagger api
+                .requestMatchers("/muddy/**", "/v3/**").permitAll() //swagger api
                 .requestMatchers("/kakao/login/**").permitAll()
                 .anyRequest().authenticated());
 
