@@ -19,9 +19,11 @@ public class MakeDto {
 
     public UserDto makeKALD(UserEntity userEntity){
         return UserDto.builder()
+            .username(userEntity.getUsername())
             .nickname(userEntity.getNickname())
             .profile_image(userEntity.getProfile_image())
             .one_liner(userEntity.getOne_liner())
+            .role(userEntity.getRole())
             .build();
     }
 
