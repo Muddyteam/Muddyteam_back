@@ -11,7 +11,6 @@ public class StatusController {
 
     @GetMapping("/status")
     public ResponseEntity<String> checkStatus(){
-        System.out.println("200");
         return ResponseEntity.ok("OK");
     }
 }
