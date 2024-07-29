@@ -22,9 +22,9 @@ public interface KakaoLoginMapper {
     @Mapping(source = "nickname", target = "nickname")
     @Mapping(source = "profileImage", target = "profileImage")
     @Mapping(source = "thumbnailImage", target = "thumbnailImage")
-    @Mapping(target = "role", defaultValue = "ROLE_USER")
-    @Mapping(target = "provider", defaultValue = "kakao")
-    @Mapping(target = "oneLiner", defaultValue = "")
+    @Mapping(target = "role", constant = "ROLE_USER")
+    @Mapping(target = "provider", constant = "kakao")
+    @Mapping(target = "oneLiner", constant = "")
     @Mapping(source = "id", target = "providerId")
     UserEntity kakaoLoginDtoToUserEntity(KakaoLoginDto kakaoLoginDto);
 
