@@ -1,4 +1,4 @@
-package com.example.muddyteam_back.dto.user;
+package com.example.muddyteam_back.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,8 +8,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @PackageName : com.example.muddyteam_back.dto.user
- * @FileName : UserDto
+ * @PackageName : com.example.muddyteam_back.dto.kakao
+ * @FileName : KakaoLoginDto
  * @Author : noglass_gongdae
  * @Date : 2024-07-13
  * @Blog : https://blog.naver.com/noglass_gongdae
@@ -22,12 +22,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 @ToString
-public class UserDto {
+public class KakaoLoginDto {
 
-    private String username;
+    private Long id;
     private String nickname;
-    private String profile_image;
-    private String one_liner;
-    private String role;
+    private String profileImage;
+    private String thumbnailImage;
 
 }

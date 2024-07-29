@@ -1,7 +1,7 @@
 package com.example.muddyteam_back.jwt;
 
 import com.example.muddyteam_back.dto.CustomUserDetails;
-import com.example.muddyteam_back.dto.user.UserDto;
+import com.example.muddyteam_back.dto.response.UserDto;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package com.example.muddyteam_back.common.config;
+package com.example.muddyteam_back.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

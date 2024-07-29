@@ -1,4 +1,4 @@
-package com.example.muddyteam_back.common.config;
+package com.example.muddyteam_back.config;
 
 import com.example.muddyteam_back.jwt.JWTFilter;
 import com.example.muddyteam_back.jwt.JWTUtil;

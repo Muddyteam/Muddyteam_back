@@ -1,6 +1,6 @@
 package com.example.muddyteam_back.dto;
 
-import com.example.muddyteam_back.dto.user.UserDto;
+import com.example.muddyteam_back.dto.response.UserDto;
 import java.util.ArrayList;
 import java.util.Collection;
 import lombok.AllArgsConstructor;
