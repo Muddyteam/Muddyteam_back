@@ -3,8 +3,10 @@ package com.example.muddyteam_back.mapper;
 import com.example.muddyteam_back.dto.request.KakaoLoginDto;
 import com.example.muddyteam_back.dto.response.UserDto;
 import com.example.muddyteam_back.entity.UserEntity;
+import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 /**
  * @PackageName : com.example.muddyteam_back.mapper
@@ -18,7 +20,8 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface KakaoLoginMapper {
 
-    @Mapping(target = "username", expression = "java('kakao_' + kakaoLoginDto.getId())")
+    @Mapping(target = "userId", ignore = true)
+    @Mapping(target = "username", constant = "")
     @Mapping(source = "nickname", target = "nickname")
     @Mapping(source = "profileImage", target = "profileImage")
     @Mapping(source = "thumbnailImage", target = "thumbnailImage")
@@ -26,6 +29,9 @@ public interface KakaoLoginMapper {
     @Mapping(target = "provider", constant = "kakao")
     @Mapping(target = "oneLiner", constant = "")
     @Mapping(source = "id", target = "providerId")
+    @Mapping(target = "accessToken", ignore = true)
+    @Mapping(target = "refreshToken", ignore = true)
+    @Mapping(target = "version", ignore = true)
     UserEntity kakaoLoginDtoToUserEntity(KakaoLoginDto kakaoLoginDto);
 
     @Mapping(source = "username", target = "username")
@@ -34,4 +40,9 @@ public interface KakaoLoginMapper {
     @Mapping(source = "oneLiner", target = "oneLiner")
     @Mapping(source = "role", target = "role")
     UserDto UserEntityToUserDto(UserEntity userEntity);
+
+    @AfterMapping
+    default void setCustomUsername(@MappingTarget UserEntity userEntity, KakaoLoginDto kakaoLoginDto) {
+        userEntity.setUsername("kakao_" + kakaoLoginDto.getId());
+    }
 }
