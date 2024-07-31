@@ -2,7 +2,6 @@ package com.example.muddyteam_back.controller;
 
 import com.example.muddyteam_back.dto.request.KakaoLoginDto;
 import com.example.muddyteam_back.dto.response.UserDto;
-import com.example.muddyteam_back.entity.UserEntity;
 import com.example.muddyteam_back.jwt.JWTUtil;
 import com.example.muddyteam_back.service.KakaoService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,10 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @PackageName : com.example.muddyteam_back.controller
@@ -35,6 +31,7 @@ public class KakaoController {
 
     private final Logger LOGGER = LoggerFactory.getLogger(KakaoController.class);
 
+    @CrossOrigin
     @PostMapping("/login")
     public ResponseEntity<UserDto> kakaoRegister(@RequestBody KakaoLoginDto kakaoLoginDto, HttpServletResponse response){
 
