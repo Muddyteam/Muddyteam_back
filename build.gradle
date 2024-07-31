@@ -38,9 +38,9 @@ dependencies {
     //JDBC
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     //mariadb
-    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
     //DB 실험용
-    implementation 'com.h2database:h2'
+    //implementation 'com.h2database:h2'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
